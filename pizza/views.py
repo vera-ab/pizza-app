@@ -7,4 +7,4 @@ from .models import Pizza, Category, Ingredient, Order
 def index(request):
     pizzas = Pizza.objects.all()
     ing = Ingredient.objects.all()
-    return HttpResponse(str([t.title for t in pizzas]))
+    return HttpResponse('str([t.title for t in pizzas])')

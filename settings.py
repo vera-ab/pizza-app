@@ -77,10 +77,16 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'pizzadb',
+        'USER': 'postgres',
+        'PASSWORD': '123',
+        'HOST': 'db',
+        'PORT': '5432',
+        'ATOMIC_REQUESTS': True
     }
 }
+
 
 
 # Password validation
