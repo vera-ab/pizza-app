@@ -1,0 +1,23 @@
+
+{% extends "base.html" %}
+    
+{% block title %}
+Pizza project
+{% endblock %}
+
+
+    {% block content %}
+    <div>
+    {% for pizza in pizzas %} 
+    <h3>{{ pizza.title }} </h3>
+    <span> {{ pizza.price }}</span>
+    <p> {{ pizza.description }} </p>
+    {% endfor %}
+    </div>
+    <ul>
+        {% for i in ingrid %} 
+        <li>{{ i.title }} </li>
+        
+        {% endfor %}
+        </ul>
+    {% endblock %}
