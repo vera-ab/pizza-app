@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+    
+{% block title %}
+Pizza list
+{% endblock %}
+
+{% block content %}
+<div>
+    <div>
+        <h3> Hi! </h3>
+        <img src="{%  static '/img/your_photojpg' %}"
+    </div>
+</div>
+<div>
+    <form action="." method="GET">
+
+        <label>Pizza Base:</label>
+        <select name="pizza">
+            <option value='-1'>---</option>
+            {% for piz in pizzas %}
+                <option value='{{ cat.pk }}' {% if category_pk == cat.pk %} selected {% endif %}>{{ piz.title }}</option>
+            {% endfor %}
+        </select><br>
+        
+        <label for="vehicle1"> I have a bike</label>
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"><br>
+    <input type='submit' value='Submit'>
+</form>
+</div>
+{% endblock %}

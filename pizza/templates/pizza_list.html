@@ -7,6 +7,10 @@ Pizza list
 
 {% block content %}
 <div>
+    <div>
+        <h3> Hi! </h3>
+        <img src="{%  static '/img/your_photojpg' %}"
+    </div>
     {% for pizza in pizzas %} 
     <h3>{{ pizza.title }} </h3>
     <span> {{ pizza.price }}</span>
