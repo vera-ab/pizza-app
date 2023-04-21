@@ -2,31 +2,32 @@
 {% load static %}
 
 {% block title %}
-Order
+Create order
 {% endblock %}
 
 {% block content %}
 <div>
     <div>
-        <h3> Hi! </h3>
-        <img src="{%  static '/img/your_photojpg' %}">
+        <h3>Create order</h3>
+        <img src="{%  static '/img/your_photo.jpg' %}" width="20%" height="20%" alt="girl">
     </div>
 </div>
-        <form action="" method="post">
-        {% csrf_token %}
-        {% for field in form %}
-    <div class="row">
-       <div class="col-md-2">
-        {{ field.label_tag }}
-        {% if field.help_text %}
-          <sup>{{ field.help_text }}</sup>
-        {% endif %}
-        {{ field.errors }}
-       </div><div class="col-md-10 pull-left">
-         {{ field }}
-       </div>
-    </div>
- {% endfor %}
-        <button type="submit" class="btn btn-success">Create</button>
-    </form>
+<form action="" method="post">
+    {% csrf_token %}
+    {% for field in form %}
+        <div class="row">
+            <div class="col-md-2">
+                {{ field.label_tag }}
+                {% if field.help_text %}
+                    <sup>{{ field.help_text }}</sup>
+                {% endif %}
+                {{ field.errors }}
+            </div>
+            <div class="col-md-10 pull-left">
+                {{ field }}
+            </div>
+        </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-success">Create</button>
+</form>
 {% endblock %}
