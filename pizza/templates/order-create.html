@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
-    
+
 {% block title %}
-Pizza list
+Order
 {% endblock %}
 
 {% block content %}
@@ -12,12 +12,11 @@ Pizza list
         <img src="{%  static '/img/your_photojpg' %}">
     </div>
 </div>
-<div>
-    <form action="" method="post">
+        <form action="" method="post">
         {% csrf_token %}
         {% for field in form %}
     <div class="row">
-       <div class="col-md-2">    
+       <div class="col-md-2">
         {{ field.label_tag }}
         {% if field.help_text %}
           <sup>{{ field.help_text }}</sup>
@@ -30,8 +29,4 @@ Pizza list
  {% endfor %}
         <button type="submit" class="btn btn-success">Create</button>
     </form>
-    <div>
-    hi
-</div>
-</div>
 {% endblock %}
