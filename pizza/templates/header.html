@@ -2,21 +2,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="/">PIZZZZZZAAAAAAA</a>
+    <div class="container">
+        <a class="navbar-brand" href="/">PIZZZZZZAAAAAAA</a>
 
-    <div class="collapse navbar-collapse" id="navbarsExample07">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'pizza:custom-pizza' %}">Custom pizza</a>
-        </li>
-          <li class="nav-item">
-          <a class="nav-link" href="{% url 'pizza:custom-pizza-list' %}">List</a>
-        </li>
-          <li class="nav-item">
-          <a class="nav-link" href="">Order</a>
-        </li>
-      </ul>
+        <div class="collapse navbar-collapse" id="navbarsExample07">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'pizza:custom-pizza' %}">Create custom pizza</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'pizza:custom-pizza-list' %}">List of custom pizza's</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'pizza:order-create' %}">Create order</a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>

@@ -2,36 +2,17 @@
 {% load static %}
     
 {% block title %}
-Pizza list
+Create custom pizza
 {% endblock %}
 
 {% block content %}
 <div>
-    <div>
-        <h3> Hi! </h3>
-        <img src="{%  static '/img/your_photojpg' %}">
-    </div>
-</div>
-<div>
+    <h3>Create custom pizza</h3>
     <form action="" method="post">
         {% csrf_token %}
-        {% for field in form %}
-    <div class="row">
-       <div class="col-md-2">    
-        {{ field.label_tag }}
-        {% if field.help_text %}
-          <sup>{{ field.help_text }}</sup>
-        {% endif %}
-        {{ field.errors }}
-       </div><div class="col-md-10 pull-left">
-         {{ field }}
-       </div>
-    </div>
- {% endfor %}
-        <button type="submit" class="btn btn-success">Create</button>
+        {{ custom_pizza_form.as_p }}
+        {{ order_form.as_p }}
+        <input type="submit" value="Create">
     </form>
-    <div>
-    hi
-</div>
 </div>
 {% endblock %}

@@ -2,26 +2,24 @@
 {% load static %}
     
 {% block title %}
-Pizza list
+List of pizza's
 {% endblock %}
 
 {% block content %}
 <div>
     <div>
-        <h3> Hi! </h3>
-        <img src="{%  static '/img/your_photojpg' %}"
+        <h3>List of pizza's</h3>
+        <img src="{%  static '/img/your_photo.jpg' %}" width="20%" height="20%" alt="girl">
     </div>
-    {% for pizza in pizzas %} 
-    <h3>{{ pizza.title }} </h3>
-    <span> {{ pizza.price }}</span>
-    <p> {{ pizza.description }} </p>
-    <ul>
-        {% for i in pizza.ingredients.all %} 
-        <li>{{ i.title }} </li>
-        
+        {% for pizza in pizzas %}
+            <h3>{{ pizza.title }}</h3>
+            <span>{{ pizza.price }}</span>
+            <p>{{ pizza.description }}</p>
+            <ul>
+                {% for i in pizza.ingredients.all %}
+                    <li>{{ i.title }}</li>
+                {% endfor %}
+            </ul>
         {% endfor %}
-        </ul>
-    {% endfor %}
     </div>
-    
 {% endblock %}
