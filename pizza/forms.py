@@ -28,4 +28,4 @@ class OrderForm(forms.ModelForm):
             visible.field.widget.attrs['class'] = 'form-control'
 
     def clean_name(self):
-        return f'{self.cleaned_data["name"]} (custom)'
+        return f'{self.cleaned_data["name"]}'

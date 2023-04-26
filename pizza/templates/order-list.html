@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+List of custom pizza's
+{% endblock %}
+
+{% block content %}
+<div>
+    <div>
+        <h3>List of custom pizza's</h3>
+        <img src="{%  static '/img/your_photo.jpg' %}" width="20%" height="20%" alt="girl">
+    </div>
+    {% for order in orders %}
+        <h3>{{ order.date_time }}</h3>
+        <span>{{ order.pizza }}</span>
+        <p>{{ order.name }}</p>
+        <span><h5>{{ order.phone_number }}</h5></span>
+        <span>{{ order.comments }}</span>
+        <ul>
+            {% for i in order.pizza.ingredients.all %}
+                <li>{{ i.title }} </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+    </div>
+{% endblock %}

@@ -76,3 +76,11 @@ class OrderCreateView(FormView):
         product.save()
         form.save_m2m()
         return super().form_valid(form)
+
+class OrderListView(TemplateView):
+    template_name = 'order-list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['orders'] = Order.objects.all()
+        return context
