@@ -54,7 +54,7 @@ class CustomCreateView(TemplateView):
             Order.objects.create(pizza=new_pizza, **order_form_cleaned_data)
 
         messages.success(self.request, 'Custom pizza and order successfully created.')
-        return redirect(reverse_lazy('pizza:custom-pizza'))
+        return redirect(reverse_lazy('pizza:order-list'))
 
 
 class CustomPizzaList(TemplateView):

@@ -9,17 +9,21 @@ List of pizza's
 <div>
     <div>
         <h3>List of pizza's</h3>
-        <img src="{%  static '/img/your_photo.jpg' %}" width="20%" height="20%" alt="girl">
+        <img src="{%  static '/pizza/img/pizza.jpg' %}" width="20%" height="20%" alt="girl">
     </div>
         {% for pizza in pizzas %}
-            <h3>{{ pizza.title }}</h3>
-            <span>{{ pizza.price }}</span>
-            <p>{{ pizza.description }}</p>
-            <ul>
-                {% for i in pizza.ingredients.all %}
-                    <li>{{ i.title }}</li>
-                {% endfor %}
-            </ul>
+            <div class="card" style="width: 18rem;">
+  <img src="{%  static '/pizza/img/pizza.jpg' %}" width="20%" height="20%" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ pizza.title }}</h5>
+    <p class="card-text"> {{ pizza.description }} </p>
+        <ul>
+            {% for i in pizza.ingredients.all %}
+                <li>{{ i.title }}</li>
+            {% endfor %}
+        </ul>
+  </div>
+</div>
         {% endfor %}
     </div>
 {% endblock %}
