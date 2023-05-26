@@ -6,6 +6,15 @@ from django.views.generic import TemplateView, FormView
 
 from .forms import CustomPizzaForm, OrderForm
 from .models import Pizza, Ingredient, Order
+from .serializers import PizzaSerializer
+
+from rest_framework.generics import (
+    ListCreateAPIView,
+)
+class MyPizzaView(ListCreateAPIView):
+    serializer_class = PizzaSerializer
+    queryset = Pizza.objects.all()
+
 
 
 def index(request):
